@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                git credentialsId: '60dd8433-a4f8-433a-87ed-fb4786ccaeb9', url: 'git@github.com:RenaudIsika/java23-mirror.git', branch: 'master'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
